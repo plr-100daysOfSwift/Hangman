@@ -18,16 +18,30 @@ class HangmanTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+	func testChosenLetter_IsNotInWord_ScoreIncreases() {
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+		// Arrange
+		let storyboard = UIStoryboard(name: "Main", bundle: nil)
+		if let sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController {
+			let currentScore = sut.score
+			sut.setWord(word: "rhythm")
+
+			// Act
+			sut.makeGuess(letter: "q")
+
+			//Assert
+			XCTAssert(sut.score == currentScore + 1, "The score should be \(currentScore + 1) but is \(sut.score)")
+
+		}
+
+
+
+
+
+
+
+
+
+	}
 
 }
