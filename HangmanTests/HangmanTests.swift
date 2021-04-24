@@ -38,4 +38,18 @@ class HangmanTests: XCTestCase {
 
 	}
 
+	func testChosenLetter_IsInWord_ScoreRemainsConstant() {
+
+		// Arrange
+		let currentScore = sut.score
+		sut.setWord(word: "rhythm")
+
+		// Act
+		sut.makeGuess(letter: "r")
+
+		//Assert
+		XCTAssert(sut.score == currentScore, "The score should be \(currentScore) but is \(sut.score)")
+
+	}
+
 }
