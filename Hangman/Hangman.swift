@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Hangman {
+class Hangman: HangmanProtocol {
 
 	private var wordToGuess: String
 	var score: Int

@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	var hangman: Hangman?
+	var hangman: HangmanProtocol?
 	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
 	var wordView = UITextField()
 

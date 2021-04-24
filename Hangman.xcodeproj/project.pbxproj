@@ -17,6 +17,9 @@
 		DA4FC0952633880B00C69E25 /* HangmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0942633880B00C69E25 /* HangmanUITests.swift */; };
 		DA4FC0A62633882900C69E25 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA4FC0A52633882900C69E25 /* README.md */; };
 		DA4FC0AB2633A57900C69E25 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0AA2633A57900C69E25 /* Hangman.swift */; };
+		DA4FC0B02634DFA500C69E25 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0AF2634DFA500C69E25 /* ViewControllerTests.swift */; };
+		DA4FC0B52634E1B400C69E25 /* MockHangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0B42634E1B400C69E25 /* MockHangman.swift */; };
+		DA4FC0BA2634E1F400C69E25 /* HangmanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0B92634E1F400C69E25 /* HangmanProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		DA4FC0962633880B00C69E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA4FC0A52633882900C69E25 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA4FC0AA2633A57900C69E25 /* Hangman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangman.swift; sourceTree = "<group>"; };
+		DA4FC0AF2634DFA500C69E25 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		DA4FC0B42634E1B400C69E25 /* MockHangman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHangman.swift; sourceTree = "<group>"; };
+		DA4FC0B92634E1F400C69E25 /* HangmanProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 				DA4FC07B2633880B00C69E25 /* Assets.xcassets */,
 				DA4FC07D2633880B00C69E25 /* LaunchScreen.storyboard */,
 				DA4FC0802633880B00C69E25 /* Info.plist */,
+				DA4FC0B92634E1F400C69E25 /* HangmanProtocol.swift */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -121,6 +128,8 @@
 			children = (
 				DA4FC0892633880B00C69E25 /* HangmanTests.swift */,
 				DA4FC08B2633880B00C69E25 /* Info.plist */,
+				DA4FC0AF2634DFA500C69E25 /* ViewControllerTests.swift */,
+				DA4FC0B42634E1B400C69E25 /* MockHangman.swift */,
 			);
 			path = HangmanTests;
 			sourceTree = "<group>";
@@ -268,6 +277,7 @@
 				DA4FC0772633880900C69E25 /* ViewController.swift in Sources */,
 				DA4FC0732633880900C69E25 /* AppDelegate.swift in Sources */,
 				DA4FC0AB2633A57900C69E25 /* Hangman.swift in Sources */,
+				DA4FC0BA2634E1F400C69E25 /* HangmanProtocol.swift in Sources */,
 				DA4FC0752633880900C69E25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4FC0B02634DFA500C69E25 /* ViewControllerTests.swift in Sources */,
 				DA4FC08A2633880B00C69E25 /* HangmanTests.swift in Sources */,
+				DA4FC0B52634E1B400C69E25 /* MockHangman.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
