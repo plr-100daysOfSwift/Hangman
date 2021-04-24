@@ -16,7 +16,9 @@ class ViewController: UIViewController {
 
 	override func loadView() {
 
-		hangman = Hangman()
+		if hangman == nil {
+			hangman = Hangman()
+		}
 
 		view = UIView()
 		view.backgroundColor = .white
