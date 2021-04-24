@@ -11,6 +11,7 @@ class Hangman {
 
 	private var wordToGuess: String
 	var score: Int
+	var correctGuesses = [Character]()
 
 	init?(wordToGuess: String = "hangman"  ) {
 		self.wordToGuess = wordToGuess
@@ -18,8 +19,9 @@ class Hangman {
 	}
 
 	func makeGuess(letter: Character) {
-		if wordToGuess.contains(letter) {
+		if wordToGuess.contains(String(letter)) {
 			// correct
+			correctGuesses.append(letter)
 		} else {
 			// incorrect
 			score += 1
