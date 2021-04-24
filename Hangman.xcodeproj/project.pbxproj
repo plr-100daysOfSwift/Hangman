@@ -16,6 +16,7 @@
 		DA4FC08A2633880B00C69E25 /* HangmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0892633880B00C69E25 /* HangmanTests.swift */; };
 		DA4FC0952633880B00C69E25 /* HangmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0942633880B00C69E25 /* HangmanUITests.swift */; };
 		DA4FC0A62633882900C69E25 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA4FC0A52633882900C69E25 /* README.md */; };
+		DA4FC0AB2633A57900C69E25 /* Hangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0AA2633A57900C69E25 /* Hangman.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		DA4FC0942633880B00C69E25 /* HangmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanUITests.swift; sourceTree = "<group>"; };
 		DA4FC0962633880B00C69E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA4FC0A52633882900C69E25 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DA4FC0AA2633A57900C69E25 /* Hangman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangman.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				DA4FC0722633880900C69E25 /* AppDelegate.swift */,
 				DA4FC0742633880900C69E25 /* SceneDelegate.swift */,
 				DA4FC0762633880900C69E25 /* ViewController.swift */,
+				DA4FC0AA2633A57900C69E25 /* Hangman.swift */,
 				DA4FC0782633880900C69E25 /* Main.storyboard */,
 				DA4FC07B2633880B00C69E25 /* Assets.xcassets */,
 				DA4FC07D2633880B00C69E25 /* LaunchScreen.storyboard */,
@@ -264,6 +267,7 @@
 			files = (
 				DA4FC0772633880900C69E25 /* ViewController.swift in Sources */,
 				DA4FC0732633880900C69E25 /* AppDelegate.swift in Sources */,
+				DA4FC0AB2633A57900C69E25 /* Hangman.swift in Sources */,
 				DA4FC0752633880900C69E25 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

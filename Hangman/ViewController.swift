@@ -9,26 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	var wordToGuess: String?
-	var score: Int = 0
+	var hangman: Hangman?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
-	}
-
-	func setWord(word: String) {
-		wordToGuess = word
-	}
-
-	func makeGuess(letter: Character) {
-		if wordToGuess != nil {
-			if wordToGuess!.contains(letter) {
-				// correct
-			} else {
-				score += 1
-			}
-		}
+		hangman = Hangman()
 	}
 
 }

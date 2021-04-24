@@ -10,17 +10,13 @@ import XCTest
 
 class HangmanTests: XCTestCase {
 
-	var storyboard: UIStoryboard!
-	var sut: ViewController!
+	var sut: Hangman!
 
 	override func setUpWithError() throws {
-		storyboard = UIStoryboard(name: "Main", bundle: nil)
-		sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController
-		sut.loadViewIfNeeded()
+		sut = Hangman(wordToGuess: "rhtyhm")
 	}
 
 	override func tearDownWithError() throws {
-		storyboard = nil
 		sut = nil
 	}
 
@@ -28,7 +24,6 @@ class HangmanTests: XCTestCase {
 
 		// Arrange
 		let currentScore = sut.score
-		sut.setWord(word: "rhythm")
 
 		// Act
 		sut.makeGuess(letter: "q")
@@ -42,7 +37,6 @@ class HangmanTests: XCTestCase {
 
 		// Arrange
 		let currentScore = sut.score
-		sut.setWord(word: "rhythm")
 
 		// Act
 		sut.makeGuess(letter: "r")
