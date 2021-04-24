@@ -11,15 +11,15 @@ class Hangman {
 
 	private var wordToGuess: String
 	var score: Int
-	var correctGuesses = [Character]()
+	var correctGuesses = [String]()
 
 	init?(wordToGuess: String = "hangman"  ) {
 		self.wordToGuess = wordToGuess
 		score = 0
 	}
 
-	func makeGuess(letter: Character) {
-		if wordToGuess.contains(String(letter)) {
+	func makeGuess(letter: String) {
+		if wordToGuess.contains(letter) {
 			// correct
 			correctGuesses.append(letter)
 		} else {

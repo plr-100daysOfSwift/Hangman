@@ -12,8 +12,8 @@ class HangmanTests: XCTestCase {
 
 	var sut: Hangman!
 	let word = "rhythm"
-	let correctLetter: Character = "r"
-	let incorrectLetter: Character = "x"
+	let correctLetter = "r"
+	let incorrectLetter = "x"
 
 	override func setUpWithError() throws {
 		sut = Hangman(wordToGuess: word)
@@ -51,7 +51,7 @@ class HangmanTests: XCTestCase {
 
 	func testChosenLetter_IsInWord_LetterAppendedToCorrectGuesses() {
 		// Arrange
-		let letter: Character = correctLetter
+		let letter = correctLetter
 		let oldCount = sut.correctGuesses.count
 
 		// Act
@@ -65,7 +65,7 @@ class HangmanTests: XCTestCase {
 
 	func testChosenLetter_IsInNotWord_CorrectGuessesRemainsConstant() {
 		// Arrange
-		let letter: Character = incorrectLetter
+		let letter = incorrectLetter
 		let oldCount = sut.correctGuesses.count
 
 		// Act
