@@ -49,4 +49,18 @@ class HangmanTests: XCTestCase {
 
 	}
 
+	func testChosenLetter_IsInWord_LetterAppendedToCorrectGuesses() {
+		// Arrange
+		let letter: Character = correctLetter
+		let oldCount = sut.correctGuesses.count
+
+		// Act
+		sut.makeGuess(letter: letter)
+		let newCount = sut.correctGuesses.count
+
+		// Assert
+		XCTAssert(sut.correctGuesses.contains(letter), "Correct Guesses should contain \(letter), but does not: \(sut.correctGuesses.description)")
+		XCTAssert(newCount == oldCount + 1, "Correct Guesses has not grown in size")
+	}
+
 }
