@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	var hangman: HangmanProtocol?
 	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
 	var wordView = UITextField()
+	var letterButtons = [UIButton]()
 
 	override func loadView() {
 
@@ -58,6 +59,7 @@ class ViewController: UIViewController {
 				let frame = CGRect(x: column * width, y: row * height, width: width, height: height)
 				button.frame = frame
 				inputView.addSubview(button)
+				letterButtons.append(button)
 			}
 		}
 
