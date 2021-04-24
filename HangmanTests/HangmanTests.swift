@@ -11,9 +11,12 @@ import XCTest
 class HangmanTests: XCTestCase {
 
 	var sut: Hangman!
+	let word = "rhythm"
+	let correctLetter: Character = "r"
+	let incorrectLetter: Character = "x"
 
 	override func setUpWithError() throws {
-		sut = Hangman(wordToGuess: "rhtyhm")
+		sut = Hangman(wordToGuess: word)
 	}
 
 	override func tearDownWithError() throws {
@@ -26,7 +29,7 @@ class HangmanTests: XCTestCase {
 		let currentScore = sut.score
 
 		// Act
-		sut.makeGuess(letter: "q")
+		sut.makeGuess(letter: incorrectLetter)
 
 		//Assert
 		XCTAssert(sut.score == currentScore + 1, "The score should be \(currentScore + 1) but is \(sut.score)")
@@ -39,7 +42,7 @@ class HangmanTests: XCTestCase {
 		let currentScore = sut.score
 
 		// Act
-		sut.makeGuess(letter: "r")
+		sut.makeGuess(letter: correctLetter)
 
 		//Assert
 		XCTAssert(sut.score == currentScore, "The score should be \(currentScore) but is \(sut.score)")
