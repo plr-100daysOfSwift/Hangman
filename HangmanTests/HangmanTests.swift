@@ -10,37 +10,31 @@ import XCTest
 
 class HangmanTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+	var storyboard: UIStoryboard!
+	var sut: ViewController!
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+	override func setUpWithError() throws {
+		storyboard = UIStoryboard(name: "Main", bundle: nil)
+		sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController
+		sut.loadViewIfNeeded()
+	}
+
+	override func tearDownWithError() throws {
+		storyboard = nil
+		sut = nil
+	}
 
 	func testChosenLetter_IsNotInWord_ScoreIncreases() {
 
 		// Arrange
-		let storyboard = UIStoryboard(name: "Main", bundle: nil)
-		if let sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController {
-			let currentScore = sut.score
-			sut.setWord(word: "rhythm")
+		let currentScore = sut.score
+		sut.setWord(word: "rhythm")
 
-			// Act
-			sut.makeGuess(letter: "q")
+		// Act
+		sut.makeGuess(letter: "q")
 
-			//Assert
-			XCTAssert(sut.score == currentScore + 1, "The score should be \(currentScore + 1) but is \(sut.score)")
-
-		}
-
-
-
-
-
-
-
-
+		//Assert
+		XCTAssert(sut.score == currentScore + 1, "The score should be \(currentScore + 1) but is \(sut.score)")
 
 	}
 
