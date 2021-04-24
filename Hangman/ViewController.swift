@@ -14,13 +14,16 @@ class ViewController: UIViewController {
 	var wordView = UITextField()
 
 	override func loadView() {
+
+		hangman = Hangman()
+
 		view = UIView()
 		view.backgroundColor = .white
 
 		wordView.translatesAutoresizingMaskIntoConstraints = false
 		wordView.textAlignment = .center
 		wordView.font = UIFont.systemFont(ofSize: 48)
-		wordView.text = "?????"
+		wordView.text = hangman?.currentGuess
 		view.addSubview(wordView)
 
 		let inputView = UIView()
@@ -62,7 +65,6 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		hangman = Hangman()
 	}
 
 }

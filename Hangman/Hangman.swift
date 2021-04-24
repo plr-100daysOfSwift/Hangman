@@ -12,6 +12,18 @@ class Hangman {
 	private var wordToGuess: String
 	var score: Int
 	var correctGuesses = [String]()
+	var currentGuess: String {
+		var word = ""
+		for letter in wordToGuess {
+			let strLetter = String(letter)
+			if  correctGuesses.contains(strLetter) {
+				word += strLetter
+			} else {
+				word += "?"
+			}
+		}
+		return word
+	}
 
 	init?(wordToGuess: String = "hangman"  ) {
 		self.wordToGuess = wordToGuess
