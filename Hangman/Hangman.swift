@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: success should be an enum with associated value
 typealias HangmanResult = Result<String, HangmanError>
 
 class Hangman: HangmanProtocol {
@@ -30,6 +31,7 @@ class Hangman: HangmanProtocol {
 	}
 
 	init?(wordToGuess: String = "hangman"  ) {
+		// TODO: Load word from file
 		self.wordToGuess = wordToGuess
 		score = 0
 	}
@@ -42,7 +44,11 @@ class Hangman: HangmanProtocol {
 		if wordToGuess.contains(letter) {
 			// correct
 			correctGuesses.append(letter)
+
+			// TODO: determine state of play
+
 			return .success(currentGuess)
+			
 		} else {
 			// incorrect
 			score += 1

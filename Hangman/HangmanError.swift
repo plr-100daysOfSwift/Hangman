@@ -8,6 +8,7 @@
 import Foundation
 
 enum HangmanError: Error {
+	// TODO: add a case correct with Strng as associated value
 	case incorrect
 	case hung
 }
