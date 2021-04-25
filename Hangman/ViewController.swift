@@ -74,6 +74,7 @@ class ViewController: UIViewController {
 
 	@objc func letterTapped(_ sender: UIButton) {
 		guard let letter = sender.titleLabel?.text else { return }
+		sender.isEnabled = false
 		hangman?.makeGuess(letter: letter)
 	}
 }
