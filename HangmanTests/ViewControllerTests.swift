@@ -18,7 +18,7 @@ class ViewControllerTests: XCTestCase {
 		// Put teardown code here. This method is called after the invocation of each test method in the class.
 	}
 
-	func testViewController_WhenLetterTapped_MakesGuess() {
+	func testViewController_WhenLetterTapped_MakeGuessIsCalled() {
 		// Arrange
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController

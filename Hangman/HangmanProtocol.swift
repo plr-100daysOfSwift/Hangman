@@ -9,6 +9,7 @@ import Foundation
 
 protocol HangmanProtocol: AnyObject {
 	var currentGuess: String { get }
+	var delegate: HangmanDelegateProtocol? { get set }
 
 	func makeGuess(letter: String)
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, HangmanDelegateProtocol {
 
 	var hangman: HangmanProtocol?
 	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
 		if hangman == nil {
 			hangman = Hangman()
+			hangman?.delegate = self
 		}
 
 		view = UIView()
@@ -77,5 +78,11 @@ class ViewController: UIViewController {
 		sender.isEnabled = false
 		hangman?.makeGuess(letter: letter)
 	}
+
+
+	func hangmanDidMakeGuessWithResult() {
+		
+	}
+
 }
 

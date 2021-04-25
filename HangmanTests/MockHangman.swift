@@ -10,6 +10,8 @@ import Foundation
 
 class MockHangman: HangmanProtocol {
 
+	var delegate: HangmanDelegateProtocol?
+
 	var makeGuessWasCalled = false
 
 	var currentGuess: String {

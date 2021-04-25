@@ -8,6 +8,8 @@
 import Foundation
 
 class Hangman: HangmanProtocol {
+	var delegate: HangmanDelegateProtocol?
+
 
 	private var wordToGuess: String
 	var score: Int
@@ -38,6 +40,7 @@ class Hangman: HangmanProtocol {
 			// incorrect
 			score += 1
 		}
+		delegate?.hangmanDidMakeGuessWithResult()
 	}
 
 }
