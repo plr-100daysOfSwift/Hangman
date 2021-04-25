@@ -21,6 +21,7 @@
 		DA4FC0B52634E1B400C69E25 /* MockHangman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0B42634E1B400C69E25 /* MockHangman.swift */; };
 		DA4FC0BA2634E1F400C69E25 /* HangmanProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0B92634E1F400C69E25 /* HangmanProtocol.swift */; };
 		DA4FC0BF2634EA5000C69E25 /* HangmanDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0BE2634EA5000C69E25 /* HangmanDelegateProtocol.swift */; };
+		DA4FC0C42634F0FC00C69E25 /* HangmanError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4FC0C32634F0FC00C69E25 /* HangmanError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		DA4FC0B42634E1B400C69E25 /* MockHangman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHangman.swift; sourceTree = "<group>"; };
 		DA4FC0B92634E1F400C69E25 /* HangmanProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanProtocol.swift; sourceTree = "<group>"; };
 		DA4FC0BE2634EA5000C69E25 /* HangmanDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanDelegateProtocol.swift; sourceTree = "<group>"; };
+		DA4FC0C32634F0FC00C69E25 /* HangmanError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				DA4FC0742633880900C69E25 /* SceneDelegate.swift */,
 				DA4FC0762633880900C69E25 /* ViewController.swift */,
 				DA4FC0AA2633A57900C69E25 /* Hangman.swift */,
+				DA4FC0C32634F0FC00C69E25 /* HangmanError.swift */,
 				DA4FC0782633880900C69E25 /* Main.storyboard */,
 				DA4FC07B2633880B00C69E25 /* Assets.xcassets */,
 				DA4FC07D2633880B00C69E25 /* LaunchScreen.storyboard */,
@@ -279,6 +282,7 @@
 			files = (
 				DA4FC0772633880900C69E25 /* ViewController.swift in Sources */,
 				DA4FC0BF2634EA5000C69E25 /* HangmanDelegateProtocol.swift in Sources */,
+				DA4FC0C42634F0FC00C69E25 /* HangmanError.swift in Sources */,
 				DA4FC0732633880900C69E25 /* AppDelegate.swift in Sources */,
 				DA4FC0AB2633A57900C69E25 /* Hangman.swift in Sources */,
 				DA4FC0BA2634E1F400C69E25 /* HangmanProtocol.swift in Sources */,
