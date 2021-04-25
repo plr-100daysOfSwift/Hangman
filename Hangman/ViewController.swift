@@ -76,12 +76,14 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 	@objc func letterTapped(_ sender: UIButton) {
 		guard let letter = sender.titleLabel?.text else { return }
 		sender.isEnabled = false
-		hangman?.makeGuess(letter: letter)
-	}
-
-
-	func hangmanDidMakeGuessWithResult() {
-		
+		if let result: Result<String, HangmanError> = hangman?.makeGuess(letter: letter) {
+			switch result {
+			case .success(let answer):
+				wordView.text = answer.uppercased()
+			default:
+				break
+			}
+		}
 	}
 
 }

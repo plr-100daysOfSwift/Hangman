@@ -32,13 +32,18 @@ class Hangman: HangmanProtocol {
 		score = 0
 	}
 
-	func makeGuess(letter: String) {
+	func makeGuess(letter: String) -> Result<String, HangmanError>{
+
+		let letter = letter.lowercased()
+		
 		if wordToGuess.contains(letter) {
 			// correct
 			correctGuesses.append(letter)
+			return .success(currentGuess)
 		} else {
 			// incorrect
 			score += 1
+			return .failure(.incorrect)
 		}
 	}
 

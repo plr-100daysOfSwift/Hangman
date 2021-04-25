@@ -11,5 +11,5 @@ protocol HangmanProtocol: AnyObject {
 	var currentGuess: String { get }
 	var delegate: HangmanDelegateProtocol? { get set }
 
-	func makeGuess(letter: String)
+	func makeGuess(letter: String) -> Result<String, HangmanError>
 }
