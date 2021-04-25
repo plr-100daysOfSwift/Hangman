@@ -40,7 +40,6 @@ class Hangman: HangmanProtocol {
 			// incorrect
 			score += 1
 		}
-		delegate?.hangmanDidMakeGuessWithResult()
 	}
 
 }
