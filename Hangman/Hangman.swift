@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias HangmanResult = Result<String, HangmanError>
+
 class Hangman: HangmanProtocol {
 	var delegate: HangmanDelegateProtocol?
 
@@ -32,7 +34,7 @@ class Hangman: HangmanProtocol {
 		score = 0
 	}
 
-	func makeGuess(letter: String) -> Result<String, HangmanError>{
+	func makeGuess(letter: String) -> HangmanResult{
 
 		let letter = letter.lowercased()
 		

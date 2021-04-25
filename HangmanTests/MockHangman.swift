@@ -18,7 +18,7 @@ class MockHangman: HangmanProtocol {
 		return ""
 	}
 
-	func makeGuess(letter: String) -> Result<String, HangmanError> {
+	func makeGuess(letter: String) -> HangmanResult {
 		makeGuessWasCalled = true
 		return .success("")
 	}
