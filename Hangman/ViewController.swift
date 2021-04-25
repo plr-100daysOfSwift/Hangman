@@ -60,6 +60,7 @@ class ViewController: UIViewController {
 				button.layer.borderWidth = 0.5
 				let frame = CGRect(x: column * width, y: row * height, width: width, height: height)
 				button.frame = frame
+				button.addTarget(self, action: #selector(letterTapped), for: .touchUpInside)
 				inputView.addSubview(button)
 				letterButtons.append(button)
 			}
@@ -71,5 +72,9 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 	}
 
+	@objc func letterTapped(_ sender: UIButton) {
+		guard let letter = sender.titleLabel?.text else { return }
+		hangman?.makeGuess(letter: letter)
+	}
 }
 
