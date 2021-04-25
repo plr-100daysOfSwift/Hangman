@@ -29,9 +29,10 @@ class HangmanTests: XCTestCase {
 		let currentScore = sut.score
 
 		// Act
-		sut.makeGuess(letter: incorrectLetter)
+		let result = sut.makeGuess(letter: incorrectLetter)
 
 		//Assert
+		XCTAssert(result == .failure(.incorrect), "The result should be .incorrect")
 		XCTAssert(sut.score == currentScore + 1, "The score should be \(currentScore + 1) but is \(sut.score)")
 
 	}
@@ -42,7 +43,7 @@ class HangmanTests: XCTestCase {
 		let currentScore = sut.score
 
 		// Act
-		sut.makeGuess(letter: correctLetter)
+		let _ = sut.makeGuess(letter: correctLetter)
 
 		//Assert
 		XCTAssert(sut.score == currentScore, "The score should be \(currentScore) but is \(sut.score)")
@@ -55,7 +56,7 @@ class HangmanTests: XCTestCase {
 		let oldCount = sut.correctGuesses.count
 
 		// Act
-		sut.makeGuess(letter: letter)
+		let _ = sut.makeGuess(letter: letter)
 		let newCount = sut.correctGuesses.count
 
 		// Assert
@@ -69,7 +70,7 @@ class HangmanTests: XCTestCase {
 		let oldCount = sut.correctGuesses.count
 
 		// Act
-		sut.makeGuess(letter: letter)
+		let _ = sut.makeGuess(letter: letter)
 		let newCount = sut.correctGuesses.count
 
 		// Assert
