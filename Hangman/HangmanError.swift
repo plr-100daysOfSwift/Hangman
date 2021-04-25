@@ -9,4 +9,5 @@ import Foundation
 
 enum HangmanError: Error {
 	case incorrect
+	case hung
 }
