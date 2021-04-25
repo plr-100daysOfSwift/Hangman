@@ -80,9 +80,25 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 			switch result {
 			case .success(let answer):
 				wordView.text = answer.uppercased()
+			case.failure(.hung):
+				showAlert()
 			default:
 				break
 			}
+		}
+	}
+	
+	fileprivate func showAlert() {
+		let ac = UIAlertController(title: "Game over", message: "Do you want to try again?", preferredStyle: .alert)
+		ac.addAction(UIAlertAction(title: "I'm game", style: .default, handler: resetInterface))
+		ac.addAction(UIAlertAction(title: "No thanks", style: .cancel, handler: resetInterface))
+		present(ac, animated: true)
+	}
+
+	@objc func resetInterface(action: UIAlertAction) {
+		wordView.text = hangman?.currentGuess
+		for button in letterButtons {
+			button.isEnabled = true
 		}
 	}
 

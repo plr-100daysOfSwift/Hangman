@@ -34,9 +34,10 @@ class Hangman: HangmanProtocol {
 		score = 0
 	}
 
-	func makeGuess(letter: String) -> HangmanResult{
+	func makeGuess(letter: String) -> HangmanResult {
 
 		let letter = letter.lowercased()
+		let result: HangmanResult
 		
 		if wordToGuess.contains(letter) {
 			// correct
@@ -45,8 +46,19 @@ class Hangman: HangmanProtocol {
 		} else {
 			// incorrect
 			score += 1
-			return .failure(.incorrect)
+			if score < 7 {
+				result = .failure(.incorrect)
+			} else {
+				reset()
+				result = .failure(.hung)
+			}
+			return result
 		}
+	}
+
+	func reset() {
+		score = 0
+		correctGuesses.removeAll()
 	}
 
 }
