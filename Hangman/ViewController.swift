@@ -41,7 +41,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 
 		NSLayoutConstraint.activate([
 
-			wordView.widthAnchor.constraint(equalToConstant: 200),
+			wordView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor),
 			wordView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 			wordView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 100),
 
