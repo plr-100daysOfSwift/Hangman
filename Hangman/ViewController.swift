@@ -52,6 +52,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 
 		])
 
+		// TODO: Inject empty strings into alphabet
 		for row in 0 ..< rows {
 			for column in 0 ..< columns {
 				let letter = alphabet[(columns * row) + column]
@@ -80,6 +81,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 			switch result {
 			case .success(let answer):
 				wordView.text = answer.uppercased()
+				// TODO: Handle successful completiom of game
 			case.failure(.hung):
 				showAlert()
 			default:
@@ -87,7 +89,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 			}
 		}
 	}
-	
+
 	fileprivate func showAlert() {
 		let ac = UIAlertController(title: "Game over", message: "Do you want to try again?", preferredStyle: .alert)
 		ac.addAction(UIAlertAction(title: "I'm game", style: .default, handler: resetInterface))
