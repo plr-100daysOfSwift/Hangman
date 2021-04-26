@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, HangmanDelegateProtocol {
 
 	var hangman: HangmanProtocol?
-	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
+	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 	var wordView = UITextField()
 	var letterButtons = [UIButton]()
 
@@ -52,10 +52,13 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 
 		])
 
-		// TODO: Inject empty strings into alphabet
+		var alphabetExtended = alphabet
+		alphabetExtended.insert("", at: 24)
+		alphabetExtended.append("")
+
 		for row in 0 ..< rows {
 			for column in 0 ..< columns {
-				let letter = alphabet[(columns * row) + column]
+				let letter = alphabetExtended[(columns * row) + column]
 				guard !letter.isEmpty else {
 					continue
 				}
