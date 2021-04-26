@@ -56,6 +56,9 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		for row in 0 ..< rows {
 			for column in 0 ..< columns {
 				let letter = alphabet[(columns * row) + column]
+				guard !letter.isEmpty else {
+					continue
+				}
 				let button = UIButton(type: .system)
 				button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
 				button.setTitle(letter, for: .normal)
