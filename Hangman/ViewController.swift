@@ -26,7 +26,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 
 		wordView.translatesAutoresizingMaskIntoConstraints = false
 		wordView.textAlignment = .center
-		wordView.font = UIFont.systemFont(ofSize: 48)
+		wordView.font = UIFont.monospacedSystemFont(ofSize: 48, weight: .medium)
 		wordView.text = hangman?.currentGuess
 		view.addSubview(wordView)
 
