@@ -13,7 +13,7 @@ typealias HangmanResult = Result<String, HangmanError>
 class Hangman: HangmanProtocol {
 	var delegate: HangmanDelegateProtocol?
 
-
+	var words = [String]()
 	private var wordToGuess: String
 	var score: Int
 	var correctGuesses = [String]()
@@ -30,9 +30,20 @@ class Hangman: HangmanProtocol {
 		return word
 	}
 
-	init?(wordToGuess: String = "hangman"  ) {
-		// TODO: Load word from file
-		self.wordToGuess = wordToGuess
+	init?(wordToGuess: String?) {
+
+		if let wordToGuess = wordToGuess {
+			self.wordToGuess = wordToGuess
+		} else {
+			if let wordsFileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
+				if let wordsFileContents = try? String(contentsOf: wordsFileURL) {
+					let lines = wordsFileContents.components(separatedBy: "\n")
+					words.append(contentsOf: lines)
+				}
+			}
+			self.wordToGuess = words.randomElement() ?? "hangman"
+		}
+
 		score = 0
 	}
 

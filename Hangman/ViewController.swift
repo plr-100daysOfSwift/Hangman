@@ -17,7 +17,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 	override func loadView() {
 
 		if hangman == nil {
-			hangman = Hangman()
+			hangman = Hangman(wordToGuess: nil)
 			hangman?.delegate = self
 		}
 
