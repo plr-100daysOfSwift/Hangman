@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, HangmanDelegateProtocol {
 
 	var hangman: HangmanProtocol?
-	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
+	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "", "Y", "Z", ""]
 	var wordView = UITextField()
 	var letterButtons = [UIButton]()
 
