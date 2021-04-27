@@ -63,6 +63,8 @@ class Hangman: HangmanProtocol {
 
 	func makeGuess(letter: String) -> HangmanResult {
 
+		// TODO: Make sure game is still in play
+
 		let letter = letter.lowercased()
 		let result: HangmanResult
 		
