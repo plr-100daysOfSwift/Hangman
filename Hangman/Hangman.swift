@@ -40,6 +40,9 @@ class Hangman: HangmanProtocol {
 		}
 		return word
 	}
+	var gameOver: Bool {
+		return guesses.isSuperset(of: lettersToGuess )
+	}
 
 	init?(wordToGuess: String?) {
 
@@ -65,8 +68,15 @@ class Hangman: HangmanProtocol {
 		
 		guesses.insert(letter)
 
+		if wordToGuess.contains(letter) {
 			// TODO: determine state of play
 
+			// correct
+			if gameOver {
+//				return win
+			} else {
+//				return lose
+			}
 			return .success(currentGuess)
 			
 		} else {
