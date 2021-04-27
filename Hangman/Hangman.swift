@@ -87,8 +87,7 @@ class Hangman: HangmanProtocol {
 				result = .failure(.incorrect)
 			} else {
 				reset()
-				// result = loss
-				result = .failure(.hung)
+				result = .failure(.loss)
 			}
 		}
 		return result

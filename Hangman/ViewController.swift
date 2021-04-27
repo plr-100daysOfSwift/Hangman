@@ -88,7 +88,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 			case .success(let answer):
 				wordView.text = answer.uppercased()
 				// TODO: Handle successful completiom of game
-			case.failure(.hung):
+			case.failure(.loss):
 				showAlert()
 			default:
 				break
