@@ -23,7 +23,7 @@ class HangmanTests: XCTestCase {
 		sut = nil
 	}
 
-	func testChosenLetter_IsNotInWord_ScoreIncreases() {
+	func testHangman_WhenChosenLetterIsNotInWord_ScoreIncreases() {
 
 		// Arrange
 		let currentScore = sut.score
@@ -37,7 +37,7 @@ class HangmanTests: XCTestCase {
 
 	}
 
-	func testChosenLetter_IsInWord_ScoreRemainsConstant() {
+	func testHangman_WhenChosenLetterIsInWord_ScoreRemainsConstant() {
 
 		// Arrange
 		let currentScore = sut.score
@@ -50,17 +50,17 @@ class HangmanTests: XCTestCase {
 
 	}
 
-	func testChosenLetter_IsInWord_LetterAppendedToCorrectGuesses() {
+	func testHangman_WhenLetterIsChosen_LetterAppendedToGuesses() {
 		// Arrange
 		let letter = correctLetter
-		let oldCount = sut.correctGuesses.count
+		let oldCount = sut.guesses.count
 
 		// Act
 		let _ = sut.makeGuess(letter: letter)
-		let newCount = sut.correctGuesses.count
+		let newCount = sut.guesses.count
 
 		// Assert
-		XCTAssert(sut.correctGuesses.contains(letter), "Correct Guesses should contain \(letter), but does not: \(sut.correctGuesses.description)")
+		XCTAssert(sut.guesses.contains(letter), "Correct Guesses should contain \(letter), but does not: \(sut.guesses.description)")
 		XCTAssert(newCount == oldCount + 1, "Correct Guesses has not grown in size")
 	}
 
