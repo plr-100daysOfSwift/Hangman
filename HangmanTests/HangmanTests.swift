@@ -64,18 +64,16 @@ class HangmanTests: XCTestCase {
 		XCTAssert(newCount == oldCount + 1, "Correct Guesses has not grown in size")
 	}
 
-	func testChosenLetter_IsInNotWord_CorrectGuessesRemainsConstant() {
-		// Arrange
-		let letter = incorrectLetter
-		let oldCount = sut.correctGuesses.count
+	func testHangman_WhenAllLettersAreGuessed_GameEndsWithWin() {
 
+		// Arrange
 		// Act
-		let _ = sut.makeGuess(letter: letter)
-		let newCount = sut.correctGuesses.count
+		sut.lettersToGuess.forEach { let _ = sut.makeGuess(letter: String($0)) }
 
 		// Assert
-		XCTAssertFalse(sut.correctGuesses.contains(letter), "Correct Guesses should not contain \(letter), but does so: \(sut.correctGuesses.description)")
-		XCTAssert(oldCount == newCount, "Correct guesses has increased by \(newCount - oldCount)")
+		XCTAssert(sut.guesses.isSuperset(of: sut.lettersToGuess), "All letters should be in guesses")
+		XCTAssert(sut.gameOver, "Game is won but gaveOver returns false")
+
 	}
 
 }
