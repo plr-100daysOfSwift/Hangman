@@ -58,7 +58,6 @@ class Hangman: HangmanProtocol {
 			self.wordToGuess = words.randomElement() ?? "hangman"
 		}
 
-//		score = 0
 	}
 
 	func makeGuess(letter: String) -> HangmanResult {
