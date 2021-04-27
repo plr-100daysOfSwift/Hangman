@@ -11,17 +11,28 @@ import Foundation
 typealias HangmanResult = Result<String, HangmanError>
 
 class Hangman: HangmanProtocol {
+
 	var delegate: HangmanDelegateProtocol?
 
 	var words = [String]()
+
 	private var wordToGuess: String
-	var score: Int
-	var correctGuesses = [String]()
+	var lettersToGuess: Set<String> {
+		var temp = Set<String>()
+		wordToGuess.forEach {temp.insert(String($0))}
+		return temp
+	}
+
+	var guesses = Set<String>()
+	var score: Int {
+		return guesses.subtracting(lettersToGuess).count
+	}
+
 	var currentGuess: String {
 		var word = ""
 		for letter in wordToGuess {
 			let strLetter = String(letter)
-			if  correctGuesses.contains(strLetter) {
+			if  guesses.contains(strLetter) {
 				word += strLetter
 			} else {
 				word += "?"
@@ -44,7 +55,7 @@ class Hangman: HangmanProtocol {
 			self.wordToGuess = words.randomElement() ?? "hangman"
 		}
 
-		score = 0
+//		score = 0
 	}
 
 	func makeGuess(letter: String) -> HangmanResult {
@@ -52,9 +63,7 @@ class Hangman: HangmanProtocol {
 		let letter = letter.lowercased()
 		let result: HangmanResult
 		
-		if wordToGuess.contains(letter) {
-			// correct
-			correctGuesses.append(letter)
+		guesses.insert(letter)
 
 			// TODO: determine state of play
 
@@ -62,7 +71,6 @@ class Hangman: HangmanProtocol {
 			
 		} else {
 			// incorrect
-			score += 1
 			if score < 7 {
 				result = .failure(.incorrect)
 			} else {
@@ -74,8 +82,7 @@ class Hangman: HangmanProtocol {
 	}
 
 	func reset() {
-		score = 0
-		correctGuesses.removeAll()
+		guesses.removeAll()
 	}
 
 }
