@@ -73,27 +73,30 @@ class Hangman: HangmanProtocol {
 			// TODO: determine state of play
 
 			// correct
+
 			if gameOver {
-//				return win
+				// result =  .win
+				result = .success(currentGuess)
 			} else {
-//				return lose
+				result = .success(currentGuess)
 			}
-			return .success(currentGuess)
-			
+
 		} else {
 			// incorrect
 			if score < 7 {
 				result = .failure(.incorrect)
 			} else {
 				reset()
+				// result = loss
 				result = .failure(.hung)
 			}
-			return result
 		}
+		return result
 	}
 
 	func reset() {
 		guesses.removeAll()
+		// fetch new word to guess
 	}
 
 }
