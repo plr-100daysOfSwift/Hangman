@@ -9,10 +9,14 @@ import UIKit
 
 class ViewController: UIViewController, HangmanDelegateProtocol {
 
+	// MARK: - Properties
+
 	var hangman: HangmanProtocol?
 	let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 	var wordView = UITextField()
 	var letterButtons = [UIButton]()
+
+	// MARK: - Life Cycle
 
 	override func loadView() {
 
@@ -80,7 +84,9 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		super.viewDidLoad()
 	}
 
-	@objc func letterTapped(_ sender: UIButton) {
+	// MARK: - Private methods
+
+	@objc fileprivate func letterTapped(_ sender: UIButton) {
 		guard let letter = sender.titleLabel?.text else { return }
 		sender.isEnabled = false
 		if let result: HangmanResult = hangman?.makeGuess(letter: letter) {
@@ -118,14 +124,15 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		present(ac, animated: true)
 	}
 
-	@objc func resetInterface(action: UIAlertAction) {
+	@objc fileprivate func resetInterface(action: UIAlertAction) {
+		// TODO: abstract the uppercase call so that wordView is always uppercase
 		wordView.text = hangman?.currentGuess.uppercased()
 		for button in letterButtons {
 			button.isEnabled = true
 		}
 	}
 
-	@objc func newGame(action: UIAlertAction) {
+	@objc fileprivate func newGame(action: UIAlertAction) {
 		hangman?.newGame()
 		resetInterface(action: action)
 	}

@@ -76,4 +76,6 @@ class HangmanTests: XCTestCase {
 
 	}
 
+	// TODO: test makeGuess is returning correctly
+
 }
