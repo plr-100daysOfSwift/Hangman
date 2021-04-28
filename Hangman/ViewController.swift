@@ -119,7 +119,7 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 	}
 
 	@objc func resetInterface(action: UIAlertAction) {
-		wordView.text = hangman?.currentGuess
+		wordView.text = hangman?.currentGuess.uppercased()
 		for button in letterButtons {
 			button.isEnabled = true
 		}
