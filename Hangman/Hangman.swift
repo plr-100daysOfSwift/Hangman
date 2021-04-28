@@ -40,7 +40,7 @@ class Hangman: HangmanProtocol {
 		}
 		return word
 	}
-	var gameOver: Bool {
+	var isGameOver: Bool {
 		return guesses.isSuperset(of: lettersToGuess )
 	}
 
@@ -62,7 +62,7 @@ class Hangman: HangmanProtocol {
 
 	func makeGuess(letter: String) -> HangmanResult {
 
-		guard !gameOver else {
+		guard !isGameOver else {
 			return .failure(.finished)
 		}
 
@@ -76,7 +76,7 @@ class Hangman: HangmanProtocol {
 
 			// correct
 
-			if gameOver {
+			if isGameOver {
 				// result =  .win
 				result = .success(currentGuess)
 			} else {

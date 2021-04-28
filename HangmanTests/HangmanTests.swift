@@ -72,7 +72,7 @@ class HangmanTests: XCTestCase {
 
 		// Assert
 		XCTAssert(sut.guesses.isSuperset(of: sut.lettersToGuess), "All letters should be in guesses")
-		XCTAssert(sut.gameOver, "Game is won but gaveOver returns false")
+		XCTAssert(sut.isGameOver, "Game is won but isGameOver returns false")
 
 	}
 
