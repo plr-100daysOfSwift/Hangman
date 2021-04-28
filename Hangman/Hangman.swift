@@ -72,15 +72,12 @@ class Hangman: HangmanProtocol {
 		guesses.insert(letter)
 
 		if wordToGuess.contains(letter) {
-			// TODO: determine state of play
-
 			// correct
-
 			if isGameOver {
 				// result =  .win
-				result = .success(currentGuess)
+				result = .success(.win)
 			} else {
-				result = .success(currentGuess)
+				result = .success(.correct(currentGuess))
 			}
 
 		} else {
