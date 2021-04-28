@@ -8,6 +8,7 @@
 import Foundation
 
 protocol HangmanProtocol: AnyObject {
+	var wordToGuess: String { get }
 	var currentGuess: String { get }
 	var delegate: HangmanDelegateProtocol? { get set }
 

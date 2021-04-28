@@ -16,7 +16,7 @@ class Hangman: HangmanProtocol {
 
 	var words = [String]()
 
-	private var wordToGuess: String
+	var wordToGuess: String
 	var lettersToGuess: Set<String> {
 		var temp = Set<String>()
 		wordToGuess.forEach {temp.insert(String($0))}
