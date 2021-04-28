@@ -8,7 +8,7 @@
 import Foundation
 
 // TODO: success should be an enum with associated value
-typealias HangmanResult = Result<String, HangmanError>
+typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
 
 class Hangman: HangmanProtocol {
 

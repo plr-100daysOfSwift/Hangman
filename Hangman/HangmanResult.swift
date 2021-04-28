@@ -1,5 +1,5 @@
 //
-//  HangmanError.swift
+//  HangmanResult.swift
 //  Hangman
 //
 //  Created by Paul Richardson on 25/04/2021.
@@ -7,10 +7,14 @@
 
 import Foundation
 
-enum HangmanError: Error {
-	// TODO: add a case correct with Strng as associated value
+enum HangmanSuccess {
+	case correct(String)
+	case win
+}
+
+enum HangmanFailure: Error {
 	case incorrect
 	case loss
-	case unknown
 	case finished
+	case unknown
 }
