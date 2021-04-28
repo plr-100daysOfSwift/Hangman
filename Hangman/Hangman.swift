@@ -93,7 +93,6 @@ class Hangman: HangmanProtocol {
 
 	func reset() {
 		guesses.removeAll()
-		// fetch new word to guess
 	}
 	
 	func newGame() {
