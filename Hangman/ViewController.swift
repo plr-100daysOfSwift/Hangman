@@ -96,10 +96,20 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		}
 	}
 
-	fileprivate func showAlert() {
-		let ac = UIAlertController(title: "Game over", message: "Do you want to try again?", preferredStyle: .alert)
-		ac.addAction(UIAlertAction(title: "I'm game", style: .default, handler: resetInterface))
-		ac.addAction(UIAlertAction(title: "No thanks", style: .cancel, handler: resetInterface))
+	fileprivate func showAlert(isWinner win: Bool) {
+		let title: String
+		let action: UIAlertAction
+		switch win {
+		case true:
+			title = "Well done!"
+			action = UIAlertAction(title: "New game", style: .default, handler: newGame)
+		case false:
+			title = "Hmm, too bad."
+			action = UIAlertAction(title: "Try again", style: .default, handler: resetInterface)
+		}
+		let ac = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+		ac.addAction(action)
+		ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 		present(ac, animated: true)
 	}
 
