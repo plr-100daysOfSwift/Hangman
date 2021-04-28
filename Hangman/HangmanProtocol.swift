@@ -13,4 +13,5 @@ protocol HangmanProtocol: AnyObject {
 	var delegate: HangmanDelegateProtocol? { get set }
 
 	func makeGuess(letter: String) -> HangmanResult
+	func newGame()
 }

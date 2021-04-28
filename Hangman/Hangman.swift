@@ -96,5 +96,10 @@ class Hangman: HangmanProtocol {
 		guesses.removeAll()
 		// fetch new word to guess
 	}
+	
+	func newGame() {
+		reset()
+		wordToGuess = words.randomElement() ?? "hangman"
+	}
 
 }
