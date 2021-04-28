@@ -110,5 +110,10 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		}
 	}
 
+	@objc func newGame(action: UIAlertAction) {
+		hangman?.newGame()
+		resetInterface(action: action)
+	}
+
 }
 
