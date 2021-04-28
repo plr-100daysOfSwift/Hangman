@@ -50,7 +50,7 @@ class Hangman: HangmanProtocol {
 		} else {
 			if let wordsFileURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
 				if let wordsFileContents = try? String(contentsOf: wordsFileURL) {
-					let lines = wordsFileContents.components(separatedBy: "\n")
+					let lines = wordsFileContents.trimmingCharacters(in: .whitespacesAndNewlines).components(separatedBy: "\n")
 					words.append(contentsOf: lines)
 				}
 			}
