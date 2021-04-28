@@ -12,4 +12,5 @@ enum HangmanError: Error {
 	case incorrect
 	case loss
 	case unknown
+	case finished
 }
