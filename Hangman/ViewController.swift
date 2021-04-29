@@ -91,14 +91,11 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 		sender.isEnabled = false
 		if let result: HangmanResult = hangman?.makeGuess(letter: letter) {
 			switch result {
-			case .success(let success):
-				switch success {
-				case .correct(let currentGuess):
-					wordView.text = currentGuess.uppercased()
-				case .win:
-					wordView.text = hangman?.wordToGuess.uppercased()
-					showAlert(isWinner: true)
-				}
+			case .success(.correct(let currentGuess)):
+				wordView.text = currentGuess.uppercased()
+			case .success(.win):
+				wordView.text = hangman?.wordToGuess.uppercased()
+				showAlert(isWinner: true)
 			case.failure(.loss):
 				showAlert(isWinner: false)
 			default:
