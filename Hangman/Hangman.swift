@@ -14,11 +14,13 @@ class Hangman: HangmanProtocol {
 	var words = [String]()
 
 	var wordToGuess: String
+
 	var lettersToGuess: Set<String> {
 		return Set(wordToGuess.map { char in String(char) })
 	}
 
 	var guesses = Set<String>()
+
 	var score: Int {
 		return guesses.subtracting(lettersToGuess).count
 	}
@@ -31,6 +33,7 @@ class Hangman: HangmanProtocol {
 		}
 		return word
 	}
+
 	var isGameOver: Bool {
 		return guesses.isSuperset(of: lettersToGuess )
 	}
