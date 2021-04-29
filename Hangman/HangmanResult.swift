@@ -11,7 +11,7 @@ typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
 
 enum HangmanSuccess {
 	case correct(String)
-	case win
+	case win(String)
 }
 
 enum HangmanFailure: Error {

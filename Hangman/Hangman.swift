@@ -69,16 +69,12 @@ class Hangman: HangmanProtocol {
 		guesses.insert(letter)
 
 		if wordToGuess.contains(letter) {
-			// correct
 			if isGameOver {
-				// result =  .win
-				result = .success(.win)
+				result = .success(.win(wordToGuess))
 			} else {
 				result = .success(.correct(currentGuess))
 			}
-
 		} else {
-			// incorrect
 			if score < 7 {
 				result = .failure(.incorrect)
 			} else {

@@ -93,8 +93,8 @@ class ViewController: UIViewController, HangmanDelegateProtocol {
 			switch result {
 			case .success(.correct(let currentGuess)):
 				wordView.text = currentGuess.uppercased()
-			case .success(.win):
-				wordView.text = hangman?.wordToGuess.uppercased()
+			case .success(.win(let word)):
+				wordView.text = word.uppercased()
 				showAlert(isWinner: true)
 			case.failure(.loss):
 				showAlert(isWinner: false)
