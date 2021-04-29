@@ -7,8 +7,6 @@
 
 import Foundation
 
-typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
-
 class Hangman: HangmanProtocol {
 
 	var delegate: HangmanDelegateProtocol?

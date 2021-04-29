@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
+
 enum HangmanSuccess {
 	case correct(String)
 	case win
