@@ -26,12 +26,10 @@ class Hangman: HangmanProtocol {
 	}
 
 	var currentGuess: String {
-		var word = ""
-		for letter in wordToGuess {
-			let strLetter = String(letter)
-			word += guesses.contains(strLetter) ? strLetter : "?"
-		}
-		return word
+		return wordToGuess.map { char in
+			let char = String(char)
+			return guesses.contains(String(char)) ? String(char) : "?"
+		}.joined()
 	}
 
 	var isGameOver: Bool {
