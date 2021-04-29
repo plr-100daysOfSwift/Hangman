@@ -69,17 +69,19 @@ class Hangman: HangmanProtocol {
 		guesses.insert(letter)
 
 		if wordToGuess.contains(letter) {
-			if isGameOver {
+			switch isGameOver {
+			case true:
 				result = .success(.win(wordToGuess))
-			} else {
+			case false:
 				result = .success(.correct(currentGuess))
 			}
 		} else {
-			if score < 7 {
-				result = .failure(.incorrect)
-			} else {
+			switch score {
+			case _ where score >= 7:
 				reset()
 				result = .failure(.loss)
+			default:
+				result = .failure(.incorrect)
 			}
 		}
 		return result
