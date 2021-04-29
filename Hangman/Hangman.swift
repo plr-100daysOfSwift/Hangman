@@ -27,11 +27,7 @@ class Hangman: HangmanProtocol {
 		var word = ""
 		for letter in wordToGuess {
 			let strLetter = String(letter)
-			if  guesses.contains(strLetter) {
-				word += strLetter
-			} else {
-				word += "?"
-			}
+			word += guesses.contains(strLetter) ? strLetter : "?"
 		}
 		return word
 	}
