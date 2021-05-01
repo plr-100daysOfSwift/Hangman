@@ -9,7 +9,7 @@ import Foundation
 
 typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
 
-enum HangmanSuccess {
+enum HangmanSuccess: Equatable {
 	case correct(String)
 	case win(String)
 }
