@@ -22,7 +22,7 @@ class MockHangman: HangmanProtocol {
 
 	func makeGuess(letter: String) -> HangmanResult {
 		makeGuessWasCalled = true
-		return .success("")
+		return .success(.correct(""))
 	}
 
 	func newGame() {
