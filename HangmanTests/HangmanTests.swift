@@ -61,7 +61,7 @@ class HangmanTests: XCTestCase {
 
 		// Assert
 		XCTAssert(sut.guesses.contains(letter), "Correct Guesses should contain \(letter), but does not: \(sut.guesses.description)")
-		XCTAssert(newCount == oldCount + 1, "Correct Guesses has not grown in size")
+		XCTAssertEqual(newCount, oldCount + 1, "Correct Guesses should grow in size by one")
 	}
 
 	func testHangman_WhenAllLettersAreGuessed_GameEndsWithWin() {
