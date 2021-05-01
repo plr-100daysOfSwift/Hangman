@@ -12,6 +12,16 @@ typealias HangmanResult = Result<HangmanSuccess, HangmanFailure>
 enum HangmanSuccess: Equatable {
 	case correct(String)
 	case win(String)
+
+	var description: String {
+		switch self {
+		case .correct(_):
+			return "correct"
+		case .win(_):
+			return "win"
+		}
+	}
+
 }
 
 enum HangmanFailure: Error {
