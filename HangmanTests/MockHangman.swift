@@ -10,6 +10,8 @@ import Foundation
 
 class MockHangman: HangmanProtocol {
 
+	var wordToGuess: String = "hangman"
+
 	var delegate: HangmanDelegateProtocol?
 
 	var makeGuessWasCalled = false
@@ -23,5 +25,8 @@ class MockHangman: HangmanProtocol {
 		return .success("")
 	}
 
+	func newGame() {
+		// Do something
+	}
 
 }
