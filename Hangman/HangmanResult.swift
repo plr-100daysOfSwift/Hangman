@@ -30,3 +30,14 @@ enum HangmanFailure: Error {
 	case finished
 	case unknown
 }
+
+extension HangmanResult {
+	func get() throws -> String {
+		switch self {
+		case .success(let value):
+			return value.description
+		case.failure(let error):
+			throw error
+		}
+	}
+}
