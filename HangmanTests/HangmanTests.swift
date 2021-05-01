@@ -76,6 +76,13 @@ class HangmanTests: XCTestCase {
 
 	}
 
-	// TODO: test makeGuess is returning correctly
+	func testHangman_WhenCorrectGuessMade_MakeGuessReturnsCorrect() {
+		// Act
+		let result = sut.makeGuess(letter: correctLetter)
+
+		// Assert
+		XCTAssertEqual(try result.get(), "correct", "makeGuess should return correct")
+	}
+
 
 }
