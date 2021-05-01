@@ -84,5 +84,14 @@ class HangmanTests: XCTestCase {
 		XCTAssertEqual(try result.get(), "correct", "makeGuess should return correct")
 	}
 
+	func testHangman_WhenIncorrectGuessMade_MakeGuessReturnsIncorrect() {
+		// Act
+		let result = sut.makeGuess(letter: incorrectLetter)
+
+		// Assert
+		XCTAssertThrowsError(try result.get(), "Should throw a HangmanFailure") { error in
+			XCTAssertEqual(error as! HangmanFailure, HangmanFailure.incorrect, "Error should be .incorrect")
+		}
+	}
 
 }
